@@ -1,0 +1,8 @@
+# Ignorar archivos de configuración
+config.json
+
+# Ignorar la carpeta de logs
+log/
+
+# Ignorar archivos temporales
+*.tmp
