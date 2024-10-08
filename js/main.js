@@ -6,24 +6,27 @@ import { logMessage } from './logger.js'; // Importa la función de log
 const url = config.url;
 const className = 'tu-clase-a-comparar'; // Cambia esto por la clase que deseas comparar
 
-// Monitorea el contenido de la página
-const newContent = await monitorWebContent(url, className);
+// Define la función ejecutarMonitoreo
+async function ejecutarMonitoreo() {
+    // Monitorea el contenido de la página
+    const newContent = await monitorWebContent(url, className);
 
-// Compara el contenido nuevo con el contenido guardado
-const storedContent = getContentFromFile();
+    // Compara el contenido nuevo con el contenido guardado
+    const storedContent = getContentFromFile();
 
-if (storedContent !== newContent) {
-    const message = config.messages.changesDetected; // Mensaje de cambios
-    console.log(message); // Muestra el mensaje en consola
-    logMessage(message); // Guarda el mensaje en el log
-    saveContentToFile(newContent); // Guarda el nuevo contenido
-} else {
-    const message = config.messages.noChanges; // Mensaje de sin cambios
-    console.log(message); // Muestra el mensaje en consola
-    logMessage(message); // Guarda el mensaje en el log
+    if (storedContent !== newContent) {
+        const message = config.messages.changesDetected; // Mensaje de cambios
+        console.log(message); // Muestra el mensaje en consola
+        logMessage(message); // Guarda el mensaje en el log
+        saveContentToFile(newContent); // Guarda el nuevo contenido
+    } else {
+        const message = config.messages.noChanges; // Mensaje de sin cambios
+        console.log(message); // Muestra el mensaje en consola
+        logMessage(message); // Guarda el mensaje en el log
+    }
 }
 
-// Ejecutar la función automaticamente, tiempo establecido en config.js
+// Ejecutar la función automáticamente, tiempo establecido en config.js
 setInterval(ejecutarMonitoreo, config.intervalo);
 
 // Llamar a la función inmediatamente para la primera ejecución
