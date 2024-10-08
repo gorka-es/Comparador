@@ -5,5 +5,6 @@ export const config = {
     messages: {
         changesDetected: "Ha habido cambios en el contenido.",
         noChanges: "No ha habido cambios en el contenido."
-    }
+    },
+    intervalo: '300000' //Tiempo en milisegundos para la ejecucion automatica del codigo
 };

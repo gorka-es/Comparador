@@ -1,0 +1,11 @@
+# Ignorar archivos de configuración
+config.json
+package.json
+package-lock.json
+
+# Ignorar la carpeta
+log/
+node_modules/
+
+# Ignorar archivos temporales
+*.tmp

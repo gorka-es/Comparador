@@ -22,3 +22,9 @@ if (storedContent !== newContent) {
     console.log(message); // Muestra el mensaje en consola
     logMessage(message); // Guarda el mensaje en el log
 }
+
+// Ejecutar la función automaticamente, tiempo establecido en config.js
+setInterval(ejecutarMonitoreo, config.intervalo);
+
+// Llamar a la función inmediatamente para la primera ejecución
+ejecutarMonitoreo();
