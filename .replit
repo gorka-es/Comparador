@@ -1,0 +1,4 @@
+run = "node js/main.js"
+
+[deployment]
+run = ["sh", "-c", "node js/main.js"]
